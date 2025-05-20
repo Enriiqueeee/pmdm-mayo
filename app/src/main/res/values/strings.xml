@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">pmdm-mayo</string>
+    <string name="clients">clients</string>
+    <string name="delete">delete\n</string>
 </resources>

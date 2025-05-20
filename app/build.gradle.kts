@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.navigation.safeargs.kotlin)
 }
 
 android {
@@ -33,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,7 +47,25 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.gson)
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.coroutines)
+    ksp(libs.room.ksp)
+
+    implementation("androidx.navigation:navigation-fragment:${libs.versions.navFrag.get()}")
+    implementation("androidx.navigation:navigation-fragment-ktx:${libs.versions.navFragKtx.get()}")
+    implementation("androidx.navigation:navigation-ui-ktx:${libs.versions.navUiKtx.get()}")
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.annotations)
+    ksp(libs.koin.ksp)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+ksp {
+    arg("KOIN_CONFIG_CHECK", "true")
 }
