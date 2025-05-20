@@ -7,7 +7,7 @@ import org.koin.core.annotation.Module
 import org.koin.core.annotation.Single
 
 @Module
-@ComponentScan
+@ComponentScan("edu.iesam.pmdm_mayo.features.client")
 class ClientModule {
 
     @Single

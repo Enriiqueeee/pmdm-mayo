@@ -12,14 +12,17 @@ import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
 
 @KoinViewModel
-class ClientViewModel(private val getClientsUseCase: GetClientsUseCase, private val deleteClientUseCase: DeleteClientUseCase): ViewModel() {
+class ClientViewModel(
+    private val getClientsUseCase: GetClientsUseCase,
+    private val deleteClientUseCase: DeleteClientUseCase
+) : ViewModel() {
 
     private val _uiState = MutableLiveData(UiState())
     val uiState: LiveData<UiState> get() = _uiState
 
-    fun loadClient(){
-        _uiState.value = _uiState.value?.copy(isLoading = true)
-        viewModelScope.launch(Dispatchers.IO){
+    fun loadClient() {
+        _uiState.postValue(_uiState.value?.copy(isLoading = true))
+        viewModelScope.launch(Dispatchers.IO) {
             val client = getClientsUseCase.invoke()
             _uiState.postValue(
                 UiState(
@@ -36,7 +39,6 @@ class ClientViewModel(private val getClientsUseCase: GetClientsUseCase, private 
             loadClient()
         }
     }
-
 
     data class UiState(
         val isLoading: Boolean = false,

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 const val TABLE_NAME = "Clients"
 
 @Entity(tableName = TABLE_NAME)
-class ClientEntity (
+data class ClientEntity (
 
     @PrimaryKey @ColumnInfo(name = "dni") val dni: Int,
     @ColumnInfo(name = "name") val name: String,

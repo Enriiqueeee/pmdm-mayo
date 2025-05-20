@@ -12,7 +12,8 @@ interface ClientDao {
     suspend fun findAll(): List<ClientEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveAll(vararg client: List<ClientEntity>)
+    suspend fun saveAll(clients: List<ClientEntity>)
+
 
     @Delete
     suspend fun delete(client: ClientEntity)

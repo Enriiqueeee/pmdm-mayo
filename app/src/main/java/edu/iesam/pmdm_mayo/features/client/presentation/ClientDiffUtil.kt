@@ -10,7 +10,6 @@ class ClientDiffUtil: DiffUtil.ItemCallback<Client>() {
     }
 
     override fun areContentsTheSame(oldItem: Client, newItem: Client): Boolean {
-
         return oldItem == newItem
     }
 }
