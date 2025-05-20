@@ -2,4 +2,7 @@
     <string name="app_name">pmdm-mayo</string>
     <string name="clients">clients</string>
     <string name="delete">delete\n</string>
+    <string name="Add">Añadir</string>
+    <string name="save">save</string>
+    <string name="back">Volver</string>
 </resources>

@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import edu.iesam.pmdm_mayo.R
 import edu.iesam.pmdm_mayo.databinding.ClientFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -29,6 +32,7 @@ class ClientFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
         setupObservers()
+        setupToolbar()
         viewModel.loadClient()
     }
 
@@ -49,6 +53,23 @@ class ClientFragment : Fragment() {
             }
         }
     }
+
+    private fun setupToolbar() {
+        binding.toolbar.title = "Clientes"
+        binding.toolbar.inflateMenu(R.menu.menu_client)
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_add_client -> {
+                    findNavController().navigate(
+                        ClientFragmentDirections.actionClientFragmentToAddClientFragment()
+                    )
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
