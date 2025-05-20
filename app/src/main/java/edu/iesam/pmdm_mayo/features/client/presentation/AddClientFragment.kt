@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import edu.iesam.pmdm_mayo.databinding.AddClientFragmentBinding
 import edu.iesam.pmdm_mayo.features.client.domain.Client
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,11 +40,11 @@ class AddClientFragment : Fragment() {
                 email = binding.inputEmail.text.toString()
             )
             viewModel.saveClient(client)
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().popBackStack()
         }
 
         binding.btnBack.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().popBackStack()
         }
     }
 
