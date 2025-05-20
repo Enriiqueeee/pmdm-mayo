@@ -11,4 +11,5 @@
     <string name="sales">Concepto Ventas</string>
     <string name="eur">Total (€)</string>
     <string name="add_sale">Añadir Venta</string>
+    <string name="vip">vip\n</string>
 </resources>

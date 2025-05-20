@@ -34,7 +34,7 @@ class AddClientFragment : Fragment() {
     private fun setupViews() {
         binding.btnSave.setOnClickListener {
             val client = Client(
-                dni = binding.inputDni.text.toString().toInt(),
+                dni = binding.inputDni.text.toString(),
                 name = binding.inputName.text.toString(),
                 email = binding.inputEmail.text.toString()
             )

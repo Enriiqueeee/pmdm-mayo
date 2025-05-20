@@ -18,4 +18,8 @@ class SaleDataRepository(
     override suspend fun saveSale(sale: Sales) {
         localDataSource.saveSale(sale)
     }
+
+    override suspend fun getSalesByClient(dni: String): List<Sales> {
+        return localDataSource.getSalesByClient(dni)
+    }
 }
