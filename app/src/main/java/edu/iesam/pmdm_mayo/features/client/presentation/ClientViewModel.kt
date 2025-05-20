@@ -5,13 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import edu.iesam.pmdm_mayo.features.client.domain.Client
+import edu.iesam.pmdm_mayo.features.client.domain.DeleteClientUseCase
 import edu.iesam.pmdm_mayo.features.client.domain.GetClientsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
 
 @KoinViewModel
-class ClientViewModel(private val getClientsUseCase: GetClientsUseCase): ViewModel() {
+class ClientViewModel(private val getClientsUseCase: GetClientsUseCase, private val deleteClientUseCase: DeleteClientUseCase): ViewModel() {
 
     private val _uiState = MutableLiveData(UiState())
     val uiState: LiveData<UiState> get() = _uiState
@@ -26,6 +27,13 @@ class ClientViewModel(private val getClientsUseCase: GetClientsUseCase): ViewMod
                     errorApp = false
                 )
             )
+        }
+    }
+
+    fun deleteClient(client: Client) {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteClientUseCase(client)
+            loadClient()
         }
     }
 
