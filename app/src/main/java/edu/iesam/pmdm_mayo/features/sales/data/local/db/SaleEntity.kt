@@ -8,7 +8,8 @@ const val TABLE_NAME = "sales"
 
 @Entity(tableName = TABLE_NAME)
 data class SaleEntity(
-    @PrimaryKey @ColumnInfo(name= "dni" ) val dni: String,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name= "dni" ) val dni: String,
     @ColumnInfo(name= "conceptSales" ) val conceptSales: String,
     @ColumnInfo(name= "totalSales" ) val totalSales: Double
 )

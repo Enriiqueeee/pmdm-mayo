@@ -7,6 +7,6 @@ import androidx.room.OnConflictStrategy
 @Dao
 interface SalesDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     fun save(sale: SaleEntity)
 }
