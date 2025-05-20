@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import edu.iesam.pmdm_mayo.databinding.AddSaleFragmentBinding
 import edu.iesam.pmdm_mayo.features.sales.model.Sales
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -42,11 +43,11 @@ class AddSaleFragment : Fragment() {
 
             val sale = Sales(dni = dni, conceptSales = concept, totalSales = total)
             viewModel.saveSale(sale)
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().popBackStack()
         }
 
         binding.btnBackSale.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().popBackStack()
         }
     }
 

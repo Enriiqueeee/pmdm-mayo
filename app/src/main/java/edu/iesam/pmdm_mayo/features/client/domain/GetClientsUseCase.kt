@@ -1,6 +1,5 @@
 package edu.iesam.pmdm_mayo.features.client.domain
 
-import android.util.Log
 import edu.iesam.pmdm_mayo.features.sales.model.SalesRepository
 import org.koin.core.annotation.Single
 

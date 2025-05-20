@@ -8,7 +8,7 @@ import androidx.room.Query
 
 @Dao
 interface ClientDao {
-    @Query("SELECT * FROM $TABLE_NAME")
+    @Query("SELECT * FROM $TABLE_ClIENTS")
     suspend fun findAll(): List<ClientEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
