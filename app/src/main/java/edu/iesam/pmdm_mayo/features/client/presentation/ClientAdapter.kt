@@ -18,8 +18,10 @@ class ClientAdapter : ListAdapter<Client, ClientViewHolder>(ClientDiffUtil()) {
     }
 
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
-        onDeleteClick?.let { holder.bind(getItem(position), it) }
+        val item = getItem(position)
+        onDeleteClick?.let { holder.bind(item, it) }
     }
+
 
     fun setOnDeleteClickListener(listener: (Client) -> Unit) {
         onDeleteClick = listener
