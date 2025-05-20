@@ -8,4 +8,7 @@
     <string name="email">Email</string>
     <string name="nombre">Nombre</string>
     <string name="dni">DNI</string>
+    <string name="sales">Concepto Ventas</string>
+    <string name="eur">Total (€)</string>
+    <string name="add_sale">Añadir Venta</string>
 </resources>

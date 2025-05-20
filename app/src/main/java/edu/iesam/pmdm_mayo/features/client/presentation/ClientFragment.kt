@@ -65,13 +65,19 @@ class ClientFragment : Fragment() {
                     )
                     true
                 }
+                R.id.action_add_sale -> {
+                    findNavController().navigate(
+                        ClientFragmentDirections.actionClientFragmentToAddSaleFragment()
+                    )
+                    true
+                }
                 else -> false
             }
         }
     }
 
 
-    override fun onDestroyView() {
+        override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }

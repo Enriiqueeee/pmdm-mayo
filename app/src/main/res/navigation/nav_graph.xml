@@ -12,6 +12,10 @@
         <action
             android:id="@+id/action_clientFragment_to_addClientFragment"
             app:destination="@id/addClientFragment" />
+
+        <action
+            android:id="@+id/action_clientFragment_to_addSaleFragment"
+            app:destination="@id/addSaleFragment" />
     </fragment>
 
     <fragment
@@ -19,5 +23,9 @@
         android:name="edu.iesam.pmdm_mayo.features.client.presentation.AddClientFragment"
         android:label="Añadir Cliente" />
 
+    <fragment
+        android:id="@+id/addSaleFragment"
+        android:name="edu.iesam.pmdm_mayo.features.sales.presentation.AddSaleFragment"
+        android:label="Añadir Venta" />
 
 </navigation>
