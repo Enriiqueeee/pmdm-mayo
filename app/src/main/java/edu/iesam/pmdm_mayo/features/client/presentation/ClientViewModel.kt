@@ -52,6 +52,6 @@ class ClientViewModel(
     data class UiState(
         val isLoading: Boolean = false,
         val errorApp: Boolean = false,
-        val client: List<Client> = emptyList()
+        val client: List<GetClientsUseCase.ClientFeed> = emptyList()
     )
 }

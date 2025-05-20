@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import edu.iesam.pmdm_mayo.R
 import edu.iesam.pmdm_mayo.features.client.domain.Client
+import edu.iesam.pmdm_mayo.features.client.domain.GetClientsUseCase
 
-class ClientAdapter : ListAdapter<Client, ClientViewHolder>(ClientDiffUtil()) {
+class ClientAdapter : ListAdapter<GetClientsUseCase.ClientFeed, ClientViewHolder>(ClientDiffUtil()) {
 
     private var onDeleteClick: ((Client) -> Unit)? = null
 
@@ -26,4 +27,5 @@ class ClientAdapter : ListAdapter<Client, ClientViewHolder>(ClientDiffUtil()) {
     fun setOnDeleteClickListener(listener: (Client) -> Unit) {
         onDeleteClick = listener
     }
+
 }

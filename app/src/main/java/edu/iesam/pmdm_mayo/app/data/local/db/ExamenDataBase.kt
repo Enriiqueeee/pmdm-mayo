@@ -10,7 +10,7 @@ import edu.iesam.pmdm_mayo.features.sales.data.local.db.SalesDao
 
 @Database(
     entities = [ClientEntity::class, SaleEntity::class],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class ExamenDataBase: RoomDatabase() {

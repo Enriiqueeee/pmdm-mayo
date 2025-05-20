@@ -14,6 +14,11 @@ class SaleDbLocalDataSource(
     }
 
     suspend fun getClientDnis(): List<String> {
-        return clientDao.findAll().map { it.dni.toString() }
+        return clientDao.findAll().map { it.dni }
     }
+
+    suspend fun getSalesByClient(dni: String): List<Sales>{
+        return saleDao.findByClient(dni).map { it.toDomain() }
+    }
+
 }

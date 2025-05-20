@@ -4,9 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-const val TABLE_NAME = "sales"
+const val TABLE_SALES = "sales"
 
-@Entity(tableName = TABLE_NAME)
+@Entity(tableName = TABLE_SALES)
 data class SaleEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name= "dni" ) val dni: String,
