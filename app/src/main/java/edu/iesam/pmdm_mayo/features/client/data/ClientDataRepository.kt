@@ -21,4 +21,7 @@ class ClientDataRepository(private val db: ClientDbLocalDataSource, private val 
     override suspend fun deleteClient(client: Client) {
         return db.deleteClient(client)
     }
+    override suspend fun saveClient(client: Client) {
+        db.saveClient(client)
+    }
 }

@@ -3,14 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/clients">
+    app:startDestination="@id/clientFragment">
 
     <fragment
-        android:id="@+id/clients"
+        android:id="@+id/clientFragment"
         android:name="edu.iesam.pmdm_mayo.features.client.presentation.ClientFragment"
-        android:label="@string/clients"
-        tools:layout="@layout/client_fragment">
-
+        android:label="Clientes">
+        <action
+            android:id="@+id/action_clientFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/addClientFragment"
+        android:name="edu.iesam.pmdm_mayo.features.client.presentation.AddClientFragment"
+        android:label="Añadir Cliente" />
+
 
 </navigation>

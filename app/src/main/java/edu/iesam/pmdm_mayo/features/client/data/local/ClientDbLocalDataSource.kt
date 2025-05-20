@@ -18,4 +18,8 @@ class ClientDbLocalDataSource(private val clientDao: ClientDao) {
     suspend fun deleteClient(client: Client){
         clientDao.delete(client.toEntity())
     }
+
+    suspend fun saveClient(client: Client) {
+        clientDao.save(client.toEntity())
+    }
 }
