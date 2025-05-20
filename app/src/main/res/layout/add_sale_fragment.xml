@@ -15,16 +15,18 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/inputConcept"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/sales"
-        android:inputType="text"
-        android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/spinnerDni"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+    android:id="@+id/inputConcept"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/sales"
+    android:inputType="text"
+    android:padding="12dp"
+    app:layout_constraintTop_toBottomOf="@id/spinnerDni"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/inputTotal"
+    app:layout_constraintWidth_percent="0.5"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp" />
 
     <EditText
         android:id="@+id/inputTotal"
@@ -33,37 +35,30 @@
         android:hint="@string/eur"
         android:inputType="numberDecimal"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/inputConcept"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerDni"
+        app:layout_constraintStart_toEndOf="@id/inputConcept"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp" />
 
     <Button
         android:id="@+id/btnSaveSale"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/inputTotal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp" />
 
     <Button
         android:id="@+id/btnBackSale"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@android:color/darker_gray"
         android:text="@string/back"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTotal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSaveSale"
-        app:layout_constraintVertical_bias="0.029" />
+        android:layout_marginTop="32dp"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
